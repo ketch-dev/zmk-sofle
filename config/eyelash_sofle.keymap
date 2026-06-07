@@ -20,6 +20,15 @@
 
 / {
     behaviors {
+        sk_lazy: sticky_key_lazy {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <250>;
+            quick-release;
+            lazy;
+        };
+
         mt_os: mod_tap_oneshot {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -28,7 +37,7 @@
             quick-tap-ms = <0>;
             hold-while-undecided;
             hold-while-undecided-linger;
-            bindings = <&kp>, <&sk>;
+            bindings = <&kp>, <&sk_lazy>;
         };
 
         lm_os_gui: layer_mod_tap_gui {
@@ -39,7 +48,7 @@
             quick-tap-ms = <0>;
             hold-while-undecided;
             hold-while-undecided-linger;
-            bindings = <&lm_en_lgui>, <&sk>;
+            bindings = <&lm_en_lgui>, <&sk_lazy>;
         };
 
         lm_os_alt: layer_mod_tap_alt {
@@ -50,7 +59,7 @@
             quick-tap-ms = <0>;
             hold-while-undecided;
             hold-while-undecided-linger;
-            bindings = <&lm_en_lalt>, <&sk>;
+            bindings = <&lm_en_lalt>, <&sk_lazy>;
         };
 
         lang_space: lang_space {
