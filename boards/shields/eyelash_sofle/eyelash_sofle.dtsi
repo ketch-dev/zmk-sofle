@@ -13,7 +13,6 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,battery = &vbatt;
-        zmk,underglow = &led_strip;
         zmk,backlight = &backlight;
         zmk,physical-layout = &eyelash_sofle_layout;
 
@@ -116,7 +115,7 @@
 
 &spi3 {
     compatible = "nordic,nrf-spim";
-    status = "okay";
+    status = "disabled";
 
     pinctrl-0 = <&spi3_default>;
     pinctrl-1 = <&spi3_sleep>;
@@ -124,6 +123,7 @@
 
     led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
+        status = "disabled";
 
         /* SPI */
         reg = <0>; /* ignored, but necessary for SPI bindings */
