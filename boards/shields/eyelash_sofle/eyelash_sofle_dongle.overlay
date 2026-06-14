@@ -1,3 +1,4 @@
+#include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "eyelash_sofle-layouts.dtsi"
 
@@ -5,6 +6,17 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &eyelash_sofle_layout;
+    };
+
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        status = "disabled";
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        triggers-per-rotation = <20>;
+        sensors = <&left_encoder>;
     };
 
     mock_kscan: mock_kscan_0 {

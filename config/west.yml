@@ -21,9 +21,6 @@ manifest:
       remote: cormoran
       revision: v0.3-branch+dya
       import: app/west.yml
-    - name: zmk-behavior-runtime-sensor-rotate
-      remote: cormoran
-      revision: main
     - name: zmk-module-ble-management
       remote: cormoran
       revision: zmk-v0.3.0.0
